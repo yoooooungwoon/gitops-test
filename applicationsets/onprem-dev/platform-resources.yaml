@@ -6,8 +6,8 @@ metadata:
 spec:
   generators:
     - git:
-        repoURL: https://github.com/hanazzang/BABAMBA-gitops
-        revision: refactor/gitops-structure
+        repoURL: https://github.com/yoooooungwoon/gitops-test
+        revision: main
         directories:
           - path: clusters/onprem/dev/platform/*
           # monitoring은 별도 ApplicationSet(onprem-dev-monitoring-stack)에서 관리합니다.
@@ -27,8 +27,8 @@ spec:
     spec:
       project: default
       sources:
-        - repoURL: https://github.com/hanazzang/BABAMBA-gitops
-          targetRevision: refactor/gitops-structure
+        - repoURL: https://github.com/yoooooungwoon/gitops-test
+          targetRevision: main
           path: platform/{{path.basename}}
           helm:
             ignoreMissingValueFiles: true
@@ -37,8 +37,8 @@ spec:
               - $values/{{path}}/values.yaml
               # autoscaling 스위치/트리거(선택). 없으면 무시됩니다.
               - $values/{{path}}/values-autoscaling.yaml
-        - repoURL: https://github.com/hanazzang/BABAMBA-gitops
-          targetRevision: refactor/gitops-structure
+        - repoURL: https://github.com/yoooooungwoon/gitops-test
+          targetRevision: main
           ref: values
       destination:
         server: https://kubernetes.default.svc

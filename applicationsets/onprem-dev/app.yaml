@@ -6,8 +6,8 @@ metadata:
 spec:
   generators:
     - git:
-        repoURL: https://github.com/hanazzang/BABAMBA-gitops
-        revision: refactor/gitops-structure
+        repoURL: https://github.com/yoooooungwoon/gitops-test
+        revision: main
         directories:
           - path: clusters/onprem/dev/apps/*
   template:
@@ -17,16 +17,16 @@ spec:
       project: default
 
       sources:
-        - repoURL: https://github.com/hanazzang/BABAMBA-gitops
-          targetRevision: refactor/gitops-structure
+        - repoURL: https://github.com/yoooooungwoon/gitops-test
+          targetRevision: main
           path: charts/{{path.basename}}
           helm:
             valueFiles:
               - $values/{{path}}/values.yaml
               - $values/{{path}}/values-autoscaling.yaml 
 
-        - repoURL: https://github.com/hanazzang/BABAMBA-gitops
-          targetRevision: refactor/gitops-structure
+        - repoURL: https://github.com/yoooooungwoon/gitops-test
+          targetRevision: main
           ref: values
 
       destination:

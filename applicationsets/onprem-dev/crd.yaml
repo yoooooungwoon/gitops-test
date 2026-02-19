@@ -6,8 +6,8 @@ metadata:
 spec:
   generators:
     - git:
-        repoURL: https://github.com/hanazzang/BABAMBA-gitops
-        revision: refactor/gitops-structure
+        repoURL: https://github.com/yoooooungwoon/gitops-test
+        revision: main
         directories:
           - path: clusters/onprem/dev/crds/*
   template:
@@ -18,8 +18,8 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/hanazzang/BABAMBA-gitops
-        targetRevision: refactor/gitops-structure
+        repoURL: https://github.com/yoooooungwoon/gitops-test
+        targetRevision: main
         path: platform/crds/{{path.basename}}
         # ✅ 이 부분이 핵심입니다! 헬름 대신 디렉토리 모드 사용
         directory:
