@@ -26,8 +26,10 @@ spec:
           ports:
             - name: http
               containerPort: {{ .Values.service.targetPort }}
+          {{- if .Values.envFrom }}
           envFrom:
             {{- toYaml .Values.envFrom | nindent 12 }}
+          {{- end }}
           {{- $res := .Values.resources -}}
           {{- if and (hasKey .Values "resourcesByTraffic") (hasKey .Values.resourcesByTraffic "write") -}}
           {{- $res = .Values.resourcesByTraffic.write -}}

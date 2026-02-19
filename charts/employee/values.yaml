@@ -15,13 +15,7 @@ service:
   port: 5002        # [중요] Employee 서버 포트
   targetPort: 5002
 
-envFrom:
-  - configMapRef:
-      name: db-config
-  - configMapRef:
-      name: redis-config
-  - secretRef:
-      name: db-credentials
+envFrom: []
 
 resources:
   requests:
