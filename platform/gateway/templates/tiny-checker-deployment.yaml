@@ -107,7 +107,7 @@ spec:
               port: {{ .Values.tinyChecker.port }}
             initialDelaySeconds: 2
             periodSeconds: 5
-            timeoutSeconds: 1
+            timeoutSeconds: 3
             failureThreshold: 6
 
           resources:
