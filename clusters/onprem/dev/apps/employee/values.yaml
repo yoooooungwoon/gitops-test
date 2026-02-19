@@ -8,7 +8,11 @@ image:
   tag: "sha-fa5ab88"
   pullPolicy: IfNotPresent
 
-envFrom: []
+envFrom: 
+  - configMapRef:
+      name: db-config
+  - secretRef:
+      name: db-credentials
 
 resources:
   requests:
