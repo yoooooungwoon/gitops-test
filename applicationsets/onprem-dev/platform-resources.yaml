@@ -52,6 +52,14 @@ spec:
           kind: Deployment
           jsonPointers:
             - /spec/replicas
+        - group: gateway.networking.k8s.io
+          kind: HTTPRoute
+          jsonPointers:
+            - /spec/parentRefs
+        - group: gateway.networking.k8s.io
+          kind: Gateway
+          jsonPointers:
+            - /status
       syncPolicy:
         automated:
           prune: true
